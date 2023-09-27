@@ -1,17 +1,23 @@
 #include <stdio.h>
-#include <math.h>
+#include <stdlib.h>
+
 int main()
 {
-    double a,b,c,x1,x2;
+    int a,b,c,min,max;
+    printf("Input 3 numbers (a:b:c) : ");
+    scanf("%d:%d:%d",&a,&b,&c);
 
-    printf("Input your polynomial as ax^2+bx+c\n\n");
-    scanf("%lfx^2+%lfx+%lf",&a,&b,&c);
+    if(a<=b && a<=c) min=a;
+    else if(b<=c) min=b;
+    else min=c;
 
-    x1=(-b+sqrt(pow(b,2)-(4*a*c)))/(2*a);
-    x2=(-b-sqrt(pow(b,2)-(4*a*c)))/(2*a);
+    if(a>=b && a>=c) max=a;
+    else if(b>=c) max=b;
+    else max=c;
 
-    printf("\n\nx1 = %lf",x1);
-    printf("\nx2 = %lf",x2);
+    printf("\n");
+    printf("\n%d is the minimum.",min);
+    printf("\n%d is the maximum",max);
 
     return 0;
 }
